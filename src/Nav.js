@@ -1,24 +1,30 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './nav.css'
 const Nav = () => {
+  const naveLinkStyle = ({isActive})=>{
+    return{
+      fontWeight: isActive? "bold":"normal",
+      textDecoration: isActive? "underline":"none"
+    }
+  }
   return (
-    <nav>
+    <nav className='nav'>
         <ul>
           <li>
-            <Link to='/'>Home</Link>
+            <NavLink style={naveLinkStyle} to='/'>Home</NavLink>
           </li>
           <li>
-            <Link to='/About'>About</Link>
+            <NavLink style={naveLinkStyle} to='/About'>About</NavLink>
           </li>
           <li>
-            <Link to='/NewPost'>New Post</Link>
+            <NavLink style={naveLinkStyle} to='/NewPost'>New Post</NavLink>
           </li>
           <li>
-            <Link to='/Missing'>Missing</Link>
+            <NavLink style={naveLinkStyle} to='/Missing'>Missing</NavLink>
           </li>
           <li>
-            <Link to='/PostPage'>Post Page</Link>
+            <NavLink style={naveLinkStyle} to='/PostPage'>Post Page</NavLink>
           </li>
         </ul>
     </nav>

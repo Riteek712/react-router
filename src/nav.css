@@ -1,4 +1,10 @@
+
 ul{
     display: flex;
     justify-content: space-between;
+    padding: 1em;
+    list-style: none;
+    background-color: aqua;
+    width: 100%;
+
 }
