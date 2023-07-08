@@ -8,7 +8,9 @@ import About from "./About";
 import Missing from "./Missing";
 import Error from "./Error";
 import Personal from "./Personal";
+import UserDetails from "./UserDetails";
 import { Public } from "./Public";
+import Users from "./Users";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -19,7 +21,12 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/users" element={<Users />}>
+    <Route path=":userId" element={<UserDetails />} />
+</Route>
         <Route path="/About" element={<About />} >
+          <Route index element={<Personal/>} /> 
+          {/* "index" is to load as default. */}  
           <Route path="Personal" element={<Personal/>} />
           <Route path="Public" element={<Public/>} />
         </Route>
